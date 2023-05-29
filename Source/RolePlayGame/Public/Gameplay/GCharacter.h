@@ -26,7 +26,7 @@ protected:
 	virtual void BeginPlay() override;
 
 	void MoveForward(float Value);
-
+	void MoveRight(float Value);
 protected:
 	UPROPERTY(VisibleAnywhere)
 	USpringArmComponent* SpringArmComp;
