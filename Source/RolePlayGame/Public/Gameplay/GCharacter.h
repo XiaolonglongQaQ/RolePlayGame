@@ -11,6 +11,7 @@
 class UCameraComponent;
 class USpringArmComponent;
 class UGInteractionComponent;
+class UAnimMontage;
 
 UCLASS()
 class ROLEPLAYGAME_API AGCharacter : public ACharacter
@@ -31,6 +32,7 @@ protected:
 	void MoveRight(float Value);
 	void PrimaryAttack();
 	void PrimaryInteract();
+	void PrimaryAttack_TimeElapsed();
 protected:
 	UPROPERTY(VisibleAnywhere)
 	USpringArmComponent* SpringArmComp;
@@ -39,8 +41,9 @@ protected:
 	UPROPERTY(VisibleAnywhere)
 	UGInteractionComponent* InteractionComp;
 	
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere,Category="Attack")
 	TSubclassOf<AActor> Projectileclass;
-	
-
+	UPROPERTY(EditAnywhere,Category="Attack")
+	UAnimMontage* AttackAnim;
+	FTimerHandle TimerHandle_PrimaryAttack;
 };

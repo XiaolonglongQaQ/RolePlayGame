@@ -8,24 +8,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c7521e5-930a-440e-995c-83c96d53027a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/RolePlayGame/Actor/BP_MagicProjectile.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/RolePlayGame/Actor/BP_TreasureChest.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/RolePlayGame/Character/BP_PlayerCharacter.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/RolePlayGame/Private/Actor/GItemChest.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/RolePlayGame/Private/Actor/GMagicProjectile.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/RolePlayGame/Private/Component/GInteractionComponent.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/RolePlayGame/Private/Interface/GGameplayInterface.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/RolePlayGame/Public/Actor/GItemChest.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/RolePlayGame/Public/Actor/GMagicProjectile.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/RolePlayGame/Public/Component/GInteractionComponent.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/RolePlayGame/Public/Interface/GGameplayInterface.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/RolePlayGame/Actor/BP_ExplosiveBarrel.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/RolePlayGame/Private/Actor/GExplosiveBarrel.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/RolePlayGame/Public/Actor/GExplosiveBarrel.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RolePlayGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RolePlayGame/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/DefaultInput.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultInput.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RolePlayGame/Character/PlayerCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/RolePlayGame/Character/PlayerCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/RolePlayGame/Character/Player_BPAnim.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/RolePlayGame/Character/Player_BPAnim.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/RolePlayGame/Actor/BP_MagicProjectile.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/RolePlayGame/Actor/BP_MagicProjectile.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/RolePlayGame/Character/BP_PlayerCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/RolePlayGame/Character/BP_PlayerCharacter.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/RolePlayGame/Maps/Level_01.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/RolePlayGame/Maps/Level_01.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RolePlayGame/Private/Actor/GMagicProjectile.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RolePlayGame/Private/Actor/GMagicProjectile.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RolePlayGame/Private/Component/GInteractionComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RolePlayGame/Private/Component/GInteractionComponent.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/RolePlayGame/Private/Gameplay/GCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RolePlayGame/Private/Gameplay/GCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/RolePlayGame/Public/Actor/GMagicProjectile.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RolePlayGame/Public/Actor/GMagicProjectile.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/RolePlayGame/Public/Gameplay/GCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/RolePlayGame/Public/Gameplay/GCharacter.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -139,7 +134,7 @@
       <option name="presentableId" value="Default" />
       <updated>1685354717027</updated>
       <workItem from="1685354718201" duration="105000" />
-      <workItem from="1685405760743" duration="9800000" />
+      <workItem from="1685405760743" duration="18602000" />
     </task>
     <servers />
   </component>
