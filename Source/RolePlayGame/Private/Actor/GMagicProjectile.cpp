@@ -2,6 +2,7 @@
 
 #include "Actor/GMagicProjectile.h"
 
+#include "Component/GAttributeComponent.h"
 #include "Kismet/GameplayStatics.h"
 
 AGMagicProjectile::AGMagicProjectile()
@@ -10,6 +11,7 @@ AGMagicProjectile::AGMagicProjectile()
 
 	SphereComp = CreateDefaultSubobject<USphereComponent>(TEXT("SphereComp"));
 	SphereComp->SetCollisionProfileName("Projectile");
+	SphereComp->OnComponentBeginOverlap.AddDynamic(this,&AGMagicProjectile::OnActorOverlap);
 	RootComponent = SphereComp;
 
 	EffectComp = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("EffectComp"));
@@ -27,18 +29,23 @@ void AGMagicProjectile::BeginPlay()
 	
 }
 
-void AGMagicProjectile::PostInitializeComponents()
+void AGMagicProjectile::OnActorOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
+	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	Super::PostInitializeComponents();
-	SphereComp->OnComponentHit.AddDynamic(this,&AGMagicProjectile::OnActorHit);
+	if (OtherActor && OtherActor != GetInstigator())
+	{
+		UGAttributeComponent* AttributeComp = Cast<UGAttributeComponent>(OtherActor->GetComponentByClass(UGAttributeComponent::StaticClass()));
+		if (AttributeComp)
+		{
+			AttributeComp->ApplyHealthChange(-20.0f);
+		}
+		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(),HitWorldParticle,GetActorLocation(),GetActorRotation(),FVector(1.0f,1.0f,1.0f),true,EPSCPoolMethod::None,true);
+		Destroy();
+	}
+	
+	//DrawDebugSphere(GetWorld(),Hit.ImpactPoint,30.0f,32,FColor::Red,false,2.0f);
 }
 
-void AGMagicProjectile::OnActorHit(UPrimitiveComponent* HitComponent, AActor* OtherActor,
-	UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
-{
-	UGameplayStatics::SpawnEmitterAtLocation(GetWorld(),HitWorldParticle,GetActorLocation(),GetActorRotation(),FVector(1.0f,1.0f,1.0f),true,EPSCPoolMethod::None,true);
-	Destroy();
-}
 
 
 void AGMagicProjectile::Tick(float DeltaTime)

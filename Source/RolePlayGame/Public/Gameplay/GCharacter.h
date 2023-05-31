@@ -3,6 +3,7 @@
 
 #include "CoreMinimal.h"
 #include "Camera/CameraComponent.h"
+#include "Component/GAttributeComponent.h"
 #include "Component/GInteractionComponent.h"
 #include "GameFramework/Character.h"
 #include "GameFramework/SpringArmComponent.h"
@@ -12,6 +13,7 @@ class UCameraComponent;
 class USpringArmComponent;
 class UGInteractionComponent;
 class UAnimMontage;
+class UGAttributeComponent;
 
 UCLASS()
 class ROLEPLAYGAME_API AGCharacter : public ACharacter
@@ -40,6 +42,10 @@ protected:
 	UCameraComponent* CameraComp;
 	UPROPERTY(VisibleAnywhere)
 	UGInteractionComponent* InteractionComp;
+	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category="Component")
+	UGAttributeComponent* AttributeComp;
+
+	
 	
 	UPROPERTY(EditAnywhere,Category="Attack")
 	TSubclassOf<AActor> Projectileclass;

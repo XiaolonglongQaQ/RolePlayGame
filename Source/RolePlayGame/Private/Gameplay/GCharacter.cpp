@@ -16,6 +16,8 @@ AGCharacter::AGCharacter()
 	CameraComp->SetupAttachment(SpringArmComp);
 
 	InteractionComp = CreateDefaultSubobject<UGInteractionComponent>(TEXT("InteractionComp"));
+
+	AttributeComp = CreateDefaultSubobject<UGAttributeComponent>(TEXT("AttributeComp"));
 	
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 
@@ -65,13 +67,15 @@ void AGCharacter::PrimaryInteract()
 
 void AGCharacter::PrimaryAttack_TimeElapsed()
 {
-	FVector HandLocation = GetMesh()->GetSocketLocation("Muzzle_01");
-	FTransform SpawnTM = FTransform(GetControlRotation(),HandLocation);
-	FActorSpawnParameters SpawnParameters;
-	SpawnParameters.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
-	
-	
-	GetWorld()->SpawnActor<AActor>(Projectileclass,SpawnTM,SpawnParameters);
+	if (ensure(Projectileclass))
+	{
+		FVector HandLocation = GetMesh()->GetSocketLocation("Muzzle_01");
+		FTransform SpawnTM = FTransform(GetControlRotation(),HandLocation);
+		FActorSpawnParameters SpawnParameters;
+		SpawnParameters.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+		GetWorld()->SpawnActor<AActor>(Projectileclass,SpawnTM,SpawnParameters);
+	}
+
 }
 
 void AGCharacter::Tick(float DeltaTime)
